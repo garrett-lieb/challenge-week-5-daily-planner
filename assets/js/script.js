@@ -36,13 +36,20 @@ $( document ).ready(function() {
   });
 
   //upon refresh, the text in the textarea will remain
-  
+
   function renderText() {
- 
+    var storedText = localStorage.getItem(textarray);
+    if (storedText !== null) {
+      text.text(storedText);
+    }
   }
 
   function init() {
-
+    var storedTime = localStorage.getItem(timearray);
+    if (storedTime !== null) {
+      time.text(storedTime);
+    }
+    renderText();
   }
 
 
