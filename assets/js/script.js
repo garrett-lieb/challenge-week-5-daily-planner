@@ -1,4 +1,3 @@
-
 var currentDay = $("#currentDay");
 var saveBtn = $(".saveBtn");
 var Events = $(".fas fa-save");
@@ -37,14 +36,34 @@ $( document ).ready(function() {
 
     $(".saveBtn").on("click", function() {
     console.log("save button clicked");
-
-  // get the user input from the textarea
-
-  //function to store the user input in local storage?
-
+    let time = $(this).parent().attr("id");
+    let text = $(this).siblings(".description").val();
+    let hour = String(time).split("-")[1];
     
+  // push the user input from the textarea to the array?
+    
+    timearray.push(time);
+    textarray.push(text);
+    
+  // save to local storage
+    localStorage.setItem(time, text);
+  //function to store the user input in local storage?
+    
+    
+
+    // function renderText() {
+    //   for (let i = 0; i < textarray.length; i++) {
+    //     $(text).text(textarray[i]);
+    //   }
+    // }
+    // renderText();
+
+
+    console.log(textarray);
+    console.log(timearray);
     console.log(time);
     console.log(text);
+    console.log(hour);
     
     });
 
@@ -56,20 +75,10 @@ $( document ).ready(function() {
 
     // make background color change based on time
     // function to render the background color
+    // target the id of the time block
     function renderBackground() {
-      
-      // target the id of the time block
-
       var time = $(text).parent().attr("id");
-      
-      //separate id using string (Time) at the dash to get the hour value
-      //compare the hour in the id to the current hour
-      
       var hour = String(time).split("-")[1];
-      console.log(hour);
-      
-      // compare the hour in the id to the current hour
-      // apply the past, present, or future class to each time block
       
       if (hour < dayjs().hour()) {
         $(text).parent().addClass("past");
@@ -82,9 +91,9 @@ $( document ).ready(function() {
       }
     }
 
+    // renderText();
     renderBackground();
     displayTime();
     setInterval(displayTime, 1000);
 
   });
-
