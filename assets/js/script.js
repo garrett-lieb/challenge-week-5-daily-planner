@@ -23,10 +23,6 @@ $( document ).ready(function() {
   console.log("hey get to work");
 
   $(".saveBtn").on("click", function() {
-    //when the save button is clicked, the text in the textarea is saved to local storage
-    //the time is saved to local storage
-    //the text and time are saved to an array to be recalled when the page is refreshed
-    // use the id in the time id to 
     console.log("save button clicked");
     var text = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
@@ -39,14 +35,15 @@ $( document ).ready(function() {
     console.log(timearray);
   });
 
-  //when the page is refreshed, the text in the textarea is recalled from local storage
-  //the time is recalled from local storage
-  //the text and time are recalled from the array
-  //the text are displayed in the textarea
-  //the time are displayed in the time block
+  //upon refresh, the text in the textarea will remain
+  
+  function renderText() {
+ 
+  }
 
-  //function init() {}
+  function init() {
 
+  }
 
 
   function displayTime() {
@@ -65,7 +62,7 @@ $( document ).ready(function() {
     } 
   }
 
-  //init();
+  init();
   renderBackground();
   setInterval(renderBackground, 1000);
   displayTime();
