@@ -6,7 +6,7 @@ var saveBtn = $(".saveBtn");
 var Events = $(".fas fa-save");
 var text = $("textarea").val();
 
-console.log("hello world");
+console.log("hey get to work");
 
 $( document ).ready(function() {
     
@@ -23,7 +23,13 @@ $( document ).ready(function() {
     // // TODO: Add code to get any user input that was saved in localStorage and set
     // // the values of the corresponding textarea elements. HINT: How can the id
     // // attribute of each time-block be used to do this?
-    
+
+    // // get the user input from the textarea
+
+    // // get the user input from localStorage
+
+    // // set the text of the textarea to the value from localStorage
+
 
     // get the user input from the textarea
     // get the user input from localStorage
@@ -32,7 +38,7 @@ $( document ).ready(function() {
 
 
 
-    
+
     //parse the id of div to get the hour value
     var time = $(this).parent().attr("id");
     
@@ -67,7 +73,7 @@ $( document ).ready(function() {
     displayTime();
     setInterval(displayTime, 1000);
   });
-  
+ 
  
 
     // // TODO: Add code to apply the past, present, or future class to each time
