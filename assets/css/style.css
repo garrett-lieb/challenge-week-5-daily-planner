@@ -12,6 +12,10 @@ body {
     padding: 10px;
   }
   
+  .lead {
+    font-size: 20px;
+    color: #000000;
+  }
   .description {
     white-space: pre-wrap;
   }
@@ -56,6 +60,15 @@ body {
   .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+  }
+
+  #currentDay {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: blanchedalmond;
+    border-radius: 1em;
+    padding: .5em;
   }
   
   
