@@ -39,7 +39,8 @@ $( document ).ready(function() {
     let time = $(this).parent().attr("id");
     let text = $(this).siblings(".description").val();
     let hour = String(time).split("-")[1];
-    
+      
+
   // push the user input from the textarea to the array?
     
     timearray.push(time);
@@ -77,8 +78,8 @@ $( document ).ready(function() {
     // function to render the background color
     // target the id of the time block
     function renderBackground() {
-      var time = $(text).parent().attr("id");
-      var hour = String(time).split("-")[1];
+      let time = $(text).parent().attr("id");
+      let hour = String(time).split("-")[1];
       
       if (hour < dayjs().hour()) {
         $(text).parent().addClass("past");
