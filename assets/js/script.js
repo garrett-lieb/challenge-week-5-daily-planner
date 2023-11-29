@@ -12,12 +12,12 @@ $( document ).ready(function() {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  localStorage.setItem("text", text);
-  localStorage.setItem("time", time);
+
 
 
   // get the user input from localStorage
-
+  localStorage.getItem("text", text);
+  localStorage.getItem("time", time);
 
 
   // set the text of the textarea to the value from localStorage
@@ -77,7 +77,7 @@ $( document ).ready(function() {
     }
     displayTime();
     setInterval(displayTime, 1000);
-    
+
     });
  
  
