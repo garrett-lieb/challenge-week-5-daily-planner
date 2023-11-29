@@ -67,7 +67,7 @@ $( document ).ready(function() {
 
     //display the current date and time
     function displayTime() {
-      var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+      var rightNow = dayjs().format('IT IS MMM DD, YYYY [at] hh:mm:ss a');
       currentDay.text(rightNow);
     }
     displayTime();
