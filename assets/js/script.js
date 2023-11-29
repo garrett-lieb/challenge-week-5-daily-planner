@@ -3,7 +3,8 @@
 // in the html. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 var currentDay = $("#currentDay");
 var saveBtn = $(".saveBtn");
-
+var Events = $(".fas fa-save");
+var text = $("textarea").val();
 
 console.log("hello world");
 
@@ -17,11 +18,19 @@ $( document ).ready(function() {
     // // useful when saving the description in local storage?
 
     $(".saveBtn").on("click", function() {
-      var userInput = $(this).siblings(".description").val();
-      var hour = $(this).parent().attr("id");
-      localStorage.setItem(hour, userInput);  
-    });
+    
+    //parse the id of div to get the hour value
+    var time = $(this).parent().attr("id");
+    
+    //split string (Time) at the dash to get the hour value and comapre that to the current hour
+    var hour = String(time).split("-")[1];
+    console.log(hour);
+  
+    // Returns an empty array ([]) if there aren't any Events.
 
+    // Takes an array of Events and saves them in localStorage.
+    
+    
 
     // // TODO: Add code to apply the past, present, or future class to each time
     // // block by comparing the id to the current hour. HINTS: How can the id
@@ -29,7 +38,33 @@ $( document ).ready(function() {
     // // past, present, and future classes? How can Day.js be used to get the
     // // current hour in 24-hour time?
 
+
+    // if the hour value is less than the present hour, add the past class to the textarea
+    if (hour < dayjs().hour()) {
+      $(this).parent().addClass("past");
+    }
+    console.log(dayjs().hour());
+    // if the hour value is equal to the present hour, add the present class to the textarea
+    if (hour == dayjs().hour()) {
+      $(this).parent().addClass("present");
+    }
+    // if the hour value is greater than the present hour, add the future class to the textarea
+    
+    if (hour > dayjs().hour()) {
+      $(this).parent().addClass("future");
+    }
+
+ 
+    
+    });
+
+    
+  
+    
+    
+  
     // compare the hour in the id to the current hour
+
     // if the hour is in the past, add the past class to the textarea
     // if the hour is in the present, add the present class to the textarea
     // if the hour is in the future, add the future class to the textarea
@@ -43,8 +78,8 @@ $( document ).ready(function() {
     // set the text of the textarea to the value from localStorage
 
 
+    
     // TODO: Add code to display the current date in the header of the page.
-    // HINT: How can Day.js be used to format the date?XXXXXXXXXXXXXXXXXXXXXXXXXX
 
     function displayTime() {
       var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
@@ -52,7 +87,6 @@ $( document ).ready(function() {
     }
     displayTime();
     setInterval(displayTime, 1000);
-
   });
   
  
