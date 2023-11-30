@@ -23,13 +23,13 @@ $( document ).ready(function() {
 
   $(".saveBtn").on("click", function() {
     console.log("save button clicked");
-    var savedtext = $(this).siblings(".description").val();
-    var savedtime = $(this).parent().attr("id");
+    let savedtext = $(this).siblings(".description").val();
+    let savedtime = $(this).parent().attr("id");
     console.log(savedtext);
     console.log(savedtime);
     textarray.push(savedtext);
     timearray.push(savedtime);
-    localStorage.setItem(timearray, textarray);
+    localStorage.setItem(JSON.stringify(timearray), JSON.stringify(textarray));
     console.log(textarray);
     console.log(timearray);
   });
@@ -37,13 +37,17 @@ $( document ).ready(function() {
   //upon refresh, the window will display the saved text based on the i value for the time array
   
   function renderText() {
-
-  }
-  
-
-  function reload() {
+  // check to see if time array id matches the time block id and if it does, display the text saved in the text array
+  // saved text is a string, so we need to parse it to an integer to compare it to the time block id
   
   }
+  
+  function load() {
+
+    renderText();
+  }
+
+  
 
   function displayTime() {
     var rightNow = dayjs().format ( 'MMM DD, YYYY [at] hh:mm:ss A' );
@@ -63,8 +67,7 @@ $( document ).ready(function() {
   }
 
 
-    renderText();
-    reload();
+    load();
     displayTime();
     setInterval(displayTime, 1000);
     renderBackground();
