@@ -24,35 +24,28 @@ $( document ).ready(function() {
 
   $(".saveBtn").on("click", function() {
     console.log("save button clicked");
-    var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
-    console.log(text);
-    console.log(time);
-    textarray.push(text);
-    timearray.push(time);
+    var savedtext = $(this).siblings(".description").val();
+    var savedtime = $(this).parent().attr("id");
+    console.log(savedtext);
+    console.log(savedtime);
+    textarray.push(savedtext);
+    timearray.push(savedtime);
     localStorage.setItem(timearray, textarray);
     console.log(textarray);
     console.log(timearray);
   });
 
-  //upon refresh, the text in the textarea will remain
+  //upon refresh, the window will display the saved text based on the i value for the time array
 
   function renderText() {
-    var storedText = localStorage.getItem(textarray);
-    if (storedText !== null) {
-      text.text(storedText);
+    for (var i = 0; i < timearray.length; i++) {
+      var savedtext = localStorage.getItem(timearray[i]);
+      console.log(savedText);
+      text[i].textContent = savedtext;
     }
   }
 
-  function init() {
-    var storedTime = localStorage.getItem(timearray);
-    if (storedTime !== null) {
-      time.text(storedTime);
-    }
-    renderText();
-  }
-
-
+  
   function displayTime() {
     var rightNow = dayjs().format ( 'MMM DD, YYYY [at] hh:mm:ss A' );
     currentDay.text(rightNow);
@@ -69,11 +62,14 @@ $( document ).ready(function() {
     } 
   }
 
-  init();
-  renderBackground();
-  setInterval(renderBackground, 1000);
-  displayTime();
-  setInterval(displayTime, 1000);
-  
+  function load() {
+    renderBackground();
+    setInterval(renderBackground, 1000);
+    displayTime();
+    setInterval(displayTime, 1000);
+    renderText();
+  }
+
+  load();
 
 });
