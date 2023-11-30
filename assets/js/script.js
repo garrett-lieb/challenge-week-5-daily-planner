@@ -29,7 +29,8 @@ $( document ).ready(function() {
     console.log(savedtime);
     textarray.push(savedtext);
     timearray.push(savedtime);
-    localStorage.setItem(JSON.stringify(timearray), JSON.stringify(textarray));
+    localStorage.setItem("timearray", JSON.stringify(timearray));
+    localStorage.setItem("textarray", JSON.stringify(textarray));
     console.log(textarray);
     console.log(timearray);
   });
@@ -39,11 +40,13 @@ $( document ).ready(function() {
   function renderText() {
   // check to see if time array id matches the time block id and if it does, display the text saved in the text array
   // saved text is a string, so we need to parse it to an integer to compare it to the time block id
-  
+  JSON.parse(localStorage.getItem("timearray"));
+  console.log(timearray);
+  JSON.parse(localStorage.getItem("textarray"));
+  console.log(textarray);
   }
   
   function load() {
-
     renderText();
   }
 
