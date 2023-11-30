@@ -35,11 +35,12 @@ $( document ).ready(function() {
     console.log(timearray);
   });
 
-  //upon refresh, the window will display the saved text based on the i value for the time array
-  
-  function renderText() {
+  // upon refresh, the window will display the saved text based on the i value for the time array
   // check to see if time array id matches the time block id and if it does, display the text saved in the text array
   // saved text is a string, so we need to parse it to an integer to compare it to the time block id
+
+  function renderText() {
+ 
   JSON.parse(localStorage.getItem("timearray"));
   console.log(timearray);
   JSON.parse(localStorage.getItem("textarray"));
