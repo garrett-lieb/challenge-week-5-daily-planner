@@ -1,7 +1,7 @@
 var currentDay = $("#currentDay");
 var saveBtn = $(".saveBtn");
 var events = $(".fas fa-save");
-var text = $("textarea");
+var text = $(".description");
 var time = $(".time-block").attr("id");
 var currentHour = dayjs().format("H");
 var hour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -16,7 +16,6 @@ var timearray= [];
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-
 
 
 $( document ).ready(function() {
@@ -36,20 +35,21 @@ $( document ).ready(function() {
   });
 
   //upon refresh, the window will display the saved text based on the i value for the time array
-
+  
   function renderText() {
-    for (var i = 0; i < timearray.length; i++) {
-      var savedtext = localStorage.getItem(timearray[i]);
-      console.log(savedText);
-      text[i].textContent = savedtext;
-    }
+
+  }
+  
+
+  function reload() {
+  
   }
 
-  
   function displayTime() {
     var rightNow = dayjs().format ( 'MMM DD, YYYY [at] hh:mm:ss A' );
     currentDay.text(rightNow);
   }
+
 
   function renderBackground() {
     for (var i = 0; i < hour.length; i++)
@@ -62,14 +62,13 @@ $( document ).ready(function() {
     } 
   }
 
-  function load() {
-    renderBackground();
-    setInterval(renderBackground, 1000);
+
+    renderText();
+    reload();
     displayTime();
     setInterval(displayTime, 1000);
-    renderText();
-  }
-
-  load();
+    renderBackground();
+    setInterval(renderBackground, 1000);
+    
 
 });
