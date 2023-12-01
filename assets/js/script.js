@@ -39,10 +39,17 @@ $( document ).ready(function() {
 
 
   function getText() {
-  let timearray = JSON.parse(localStorage.getItem("timearray"));
-  console.log(timearray);
-  let textarray = JSON.parse(localStorage.getItem("textarray"));
-  console.log(textarray);
+    let timearray = JSON.parse(localStorage.getItem("timearray"));
+    console.log(timearray);
+    let textarray = JSON.parse(localStorage.getItem("textarray"));
+    console.log(textarray);
+
+    // Populate the "description" field based on the values in "textarray"
+    for (let i = 0; i < timearray.length; i++) {
+      let timeId = "#" + timearray[i];
+      let descriptionField = $(timeId).find(".description");
+      descriptionField.val(textarray[i]);
+    }
   };
 
 
