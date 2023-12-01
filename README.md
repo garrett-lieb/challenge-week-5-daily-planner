@@ -1,8 +1,10 @@
-# challenge-week-5-daily-planner
+# daily-planner-exercise
 
+  ## Description
  
- ## Description
-This is a daily planner created as a challenge exercise for week 5 of the edX/U of Oregon coding bootcamp. It displays the hours of a hypthetical workday and allows the user to create a schedule and see upcoming and past events logged to local storage.
+This is a daily planner created as a challenge exercise for week 5 of the edX/U of Oregon coding bootcamp. It displays the hours of a hypthetical workday and allows the user to create a schedule and see upcoming and past events logged to local storage. The clock at the top shows the date, time, and day of week so the user can keep their tasks orgainzed. Additionally, the hour-rows are color coded so the user can know what events and notes pertain to the past, current, and future hours of their work day.
+
+imgsrc 
 
  ## Instalation
 
@@ -10,11 +12,14 @@ N/A
 
  ## Usage
 
-
+The user can enter events for a given work day into the text fields of each hour-row and save them by clicking the blue buttons to the right of the rows. 
+If the user opens the console they can see the arrays of time and text being logged as well as instances when the save buttons were clicked. 
+By deleting the text and clicking 'save' the user can clear the hour-row.
+By changing the hour values in the html and javascript files for the hour(s), the schedule can be altered to accomodate different time spans. 
 
  ## Credits
 
-
+N/A
 
  ## Liscence
 
