@@ -35,21 +35,17 @@ $( document ).ready(function() {
     console.log(timearray);
   });
 
-  // upon refresh, the window will display the saved text based on the i value for the time array
-  // check to see if time array id matches the time block id and if it does, display the text saved in the text array
-  // saved text is a string, so we need to parse it to an integer to compare it to the time block id
+// get text from local storage and display it on the page
+
 
   function renderText() {
- 
-  JSON.parse(localStorage.getItem("timearray"));
+  let timearray = JSON.parse(localStorage.getItem("timearray"));
   console.log(timearray);
-  JSON.parse(localStorage.getItem("textarray"));
+  let textarray = JSON.parse(localStorage.getItem("textarray"));
   console.log(textarray);
   }
-  
-  function load() {
-    renderText();
-  }
+
+// when the page loads pull from local storage and display it on the page
 
   
 
@@ -70,12 +66,13 @@ $( document ).ready(function() {
     } 
   }
 
-
-    load();
+    function init() {
+    renderText();
     displayTime();
     setInterval(displayTime, 1000);
     renderBackground();
     setInterval(renderBackground, 1000);
-    
+    };
 
+    init();
 });
