@@ -45,7 +45,7 @@ $( document ).ready(function() {
   console.log(textarray);
   };
 
-// when the page loads pull from local storage and display it on the page
+
 
   
 
@@ -65,7 +65,9 @@ $( document ).ready(function() {
       text[i].classList.add("present");
     } 
   }
-
+  
+  // when the page loads pull from local storage and display it on the page
+  
     function init() {
     getText();
     displayTime();
