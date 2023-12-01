@@ -38,12 +38,12 @@ $( document ).ready(function() {
 // get text from local storage and display it on the page
 
 
-  function renderText() {
+  function getText() {
   let timearray = JSON.parse(localStorage.getItem("timearray"));
   console.log(timearray);
   let textarray = JSON.parse(localStorage.getItem("textarray"));
   console.log(textarray);
-  }
+  };
 
 // when the page loads pull from local storage and display it on the page
 
@@ -67,7 +67,7 @@ $( document ).ready(function() {
   }
 
     function init() {
-    renderText();
+    getText();
     displayTime();
     setInterval(displayTime, 1000);
     renderBackground();
