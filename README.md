@@ -4,7 +4,17 @@
  
 This is a daily planner created as a challenge exercise for week 5 of the edX/U of Oregon coding bootcamp. It displays the hours of a hypthetical workday and allows the user to create a schedule and see upcoming and past events logged to local storage. The clock at the top shows the date, time, and day of week so the user can keep their tasks orgainzed. Additionally, the hour-rows are color coded so the user can know what events and notes pertain to the past, current, and future hours of their work day.
 
-imgsrc 
+<img src="./assets/images/headerOnly.png" width="100%" height="100%">
+<img src="./assets/images/.png" width="100%" height="100%">
+<img src="./assets/images/.png" width="100%" height="100%">
+<img src="./assets/images/.png" width="100%" height="100%">
+
+[Deployed Page: https://garrett-lieb.github.io/daily-planner-exercise/]
+
+[ Garrett Lieb GITHUB REPO: https://github.com/garrett-lieb/daily-planner-exercise ]
+
+[SOURCE CODE - CLASS REPO: https://git.bootcampcontent.com/University-of-Oregon/UofO-VIRT-FSF-PT-10-2023-U-LOLC/-/blob/main/05-Third-Party-APIs/02-Challenge/Develop/script.js?ref_type=heads ]
+
 
  ## Instalation
 
