@@ -44,7 +44,7 @@ $( document ).ready(function() {
     let textarray = JSON.parse(localStorage.getItem("textarray"));
     console.log(textarray);
 
-    // Populate the "description" field based on the values in "textarray"
+    // Populate the "description" field based on the values in "textarray" in realtion to "timearray"
     for (let i = 0; i < timearray.length; i++) {
       let timeId = "#" + timearray[i];
       let descriptionField = $(timeId).find(".description");
