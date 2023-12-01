@@ -6,9 +6,9 @@ This is a daily planner created as a challenge exercise for week 5 of the edX/U 
 
 <img src="./assets/readme-images/headerOnly.png" width="100%" height="100%">
 
-<!-- <img src="./assets/images/.png" width="100%" height="100%">
-<img src="./assets/images/.png" width="100%" height="100%">
-<img src="./assets/images/.png" width="100%" height="100%"> -->
+<!-- <img src="./assets/readme-images/.png" width="100%" height="100%">
+<img src="./assets/readme-images/.png" width="100%" height="100%">
+<img src="./assets/readme-images/.png" width="100%" height="100%"> -->
 
 [Deployed Page: https://garrett-lieb.github.io/daily-planner-exercise/]
 
