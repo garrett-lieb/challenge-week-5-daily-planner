@@ -39,7 +39,8 @@ var hour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
     // Display the current date and time
     function displayTime() {
       var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss A');
-      currentDay.text(rightNow);
+      var dayofweek = dayjs().format('dddd');
+      currentDay.text(rightNow + " " + dayofweek);
     }
     // Render the background color based on the current time
     function renderBackground() {
